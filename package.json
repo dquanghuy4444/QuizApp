@@ -1,0 +1,47 @@
+{
+  "homepage": "https://github.com/dquanghuy4444/QuizApp",
+  "name": "quizapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.4",
+    "cra-template-typescript": "1.1.1",
+    "gh-pages": "^3.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "save-dev": "0.0.1-security",
+    "styled-components": "^5.2.1",
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0"
+  }
+}
