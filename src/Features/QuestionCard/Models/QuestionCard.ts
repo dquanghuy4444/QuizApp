@@ -1,17 +1,11 @@
 import React from 'react';
+import { QuestionState } from './../../QuestionArea/Models/QuestionArea'
 
 export interface QuestionCardModel {
-    question: string,
-    answers: string[],
-    callback: any,
-    userAnswer: any,
-    questionNum: number,
-    totalQuestions: number,
+    question:QuestionState,
+    score:number,
+    setScore:React.Dispatch<React.SetStateAction<number>>,
 }
 
-
-export const getRatioQuestion = (q: QuestionCardModel) :string => {
-    return `${q.questionNum} / ${q.totalQuestions}`;
-}
 
 

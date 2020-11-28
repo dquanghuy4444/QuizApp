@@ -1,23 +1,34 @@
-import React from 'react';
-import { QuestionCardModel , getRatioQuestion } from '../Models/QuestionCard';
+import React, { useEffect, useState } from 'react';
+import { QuestionCardModel  } from '../Models/QuestionCard';
+import { QuestionState  } from './../../QuestionArea/Models/QuestionArea';
 
-function QuestionCardScreen(prop : QuestionCardModel) {
+type Props = {
+  question:QuestionState,
+  score:number,
+  setScore:React.Dispatch<React.SetStateAction<number>>,
+  setNumQuestionFunc:any,
+  totalQuestions:number
+};
+
+const QuestionCardScreen : React.FC<Props> = ({question , score , setScore , setNumQuestionFunc , totalQuestions}) =>{
+  console.log(question);
+  const {  answers } = question;
+
+  const setMyAnswer = (myAnswer : string) =>{
+    if(myAnswer === question.correct_answer){
+      setScore(score + 1);
+    }
+    setNumQuestionFunc()
+  }
 
   return (
     <div>
-      <p className="number">
-        Question : { getRatioQuestion(prop) }
-      </p>
-      <p dangerouslySetInnerHTML={{ __html: prop.question }}></p>
-      <div>
+      <h3>
+        { question.question }
+      </h3>
+      <div className="row">
         {
-          prop.answers.map(answer =>(
-            <div>
-              <button disabled={prop.userAnswer} value={answer} onClick={prop.callback}>
-                <span dangerouslySetInnerHTML={{ __html: answer }}></span>
-              </button>
-            </div>
-          ))
+          answers.map((answer:string) => <button className="btn btn-primary col-6 mt-2 " style={{ width : "100%" }} onClick={ () =>{setMyAnswer(answer)}}>{answer}</button>)
         }
       </div>
     </div>
