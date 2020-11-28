@@ -23,12 +23,10 @@ const QuestionCardScreen : React.FC<Props> = ({question , score , setScore , set
 
   return (
     <div>
-      <h3>
-        { question.question }
-      </h3>
+      <h3 dangerouslySetInnerHTML={{__html: question.question }} />
       <div className="row">
         {
-          answers.map((answer:string) => <button className="btn btn-primary col-6 mt-2 " style={{ width : "100%" }} onClick={ () =>{setMyAnswer(answer)}}>{answer}</button>)
+          answers.map((answer:string) => <button className="btn btn-primary col-6 mt-2 " style={{ height : "50px" }} onClick={ () =>{setMyAnswer(answer)}}>{answer}</button>)
         }
       </div>
     </div>
