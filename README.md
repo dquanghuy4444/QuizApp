@@ -1,1 +1,1 @@
-Public Web : https://quizappz.netlify.app/
+https://pohip-quizapp.netlify.app/
